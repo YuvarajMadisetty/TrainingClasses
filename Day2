@@ -1,0 +1,81 @@
+//When we call a constructor which is extends another class, if it has a constructor it will automatically call the super Constructor also.
+____________________________________________________________________________________________________
+
+Ex: Method calling
+
+class Animal{
+    static void eat(){
+//Using static key word static bllock will be created and it is a single turn block
+
+        System.out.println("Animal is eating");
+    }
+}
+class Dog extends Animal
+{
+    static void eat(){
+        System.out.println("Dog is eating");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Animal.eat();
+        Dog.eat();
+    }
+}
+
+// For static method no need to create a object ,The static will act as a instance and object.
+//Using Class name you can call static methods.
+
+____________________________________________________________________________________________________
+
+// Constructor : initialization of Objects.
+
+Eg: class Animal{
+  Animal(){
+    System.out.println("Animal Constructor);
+  }
+}
+class Dog{
+  Dog(){
+    System.out.println("Dog Constructor);
+  }
+}
+  class Main
+       {
+          public static void main(String args[])
+          {
+              new Dog();
+      
+          }
+    
+       }
+____________________________________________________________________________________________________
+//Conditional statements : It will check the Given COnditions and it will print the block.
+// Conditional statements are used to get output in constant times.
+Types:
+(1) if 
+     Syntax: if(Condition)
+              {
+                //statement.
+              }
+(2) if else(if else Ladder)
+      Syntax : if(Condition)
+                    {
+                      //statement.
+                    }
+      else if (Condition)
+                    {
+                      //statement.
+                    }
+      else {
+              //statement
+            }
+(3) else
+      if(Condition)
+                   {
+                     //statement.
+                   }
+            
+            else {
+                    //statement
+                  }
