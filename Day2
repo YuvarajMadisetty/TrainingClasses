@@ -1,5 +1,5 @@
 //When we call a constructor which is extends another class, if it has a constructor it will automatically call the super Constructor also.
-____________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________________________________________________
 
 Ex: Method calling
 
@@ -26,8 +26,7 @@ public class Main{
 // For static method no need to create a object ,The static will act as a instance and object.
 //Using Class name you can call static methods.
 
-____________________________________________________________________________________________________
-
+________________________________________________________________________________________________________________________________________________________________________________________________________
 // Constructor : initialization of Objects.
 
 Eg: class Animal{
@@ -49,9 +48,38 @@ class Dog{
           }
     
        }
-____________________________________________________________________________________________________
-//Conditional statements : It will check the Given COnditions and it will print the block.
-// Conditional statements are used to get output in constant times.
+________________________________________________________________________________________________________________________________________________________________________________________________________
+**Constructor Override
+
+Eg:
+
+class Animal{
+     void eat(){
+//Using static key word static bllock will be created and it is a single turn block
+
+        System.out.println("Animal is eating");
+    }
+}
+class Dog extends Animal
+{    @override
+    void eat(){
+        System.out.println("Dog is eating");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Animal animal = new Dog();
+        Animal.eat();
+    }
+}
+________________________________________________________________________________________________________________________________________________________________________________________________________
+
+** Control Statement:
+// In programming are like the decision-making and directing forces within your code. They determine the order in which instructions are executed. 
+=> Without them, your program would simply run line by line from top to bottom, every single time, without any flexibility or the ability to respond to different situations.
+** Conditional statement:
+// Conditional statements : It will check the Given COnditions and it will print the block.
+=> Conditional statements are used to get output in constant times.
 Types:
 (1) if 
      Syntax: if(Condition)
@@ -79,10 +107,8 @@ Types:
             else {
                     //statement
                   }
-____________________________________________________________________________________________________
-
+________________________________________________________________________________________________________________________________________________________________________________________________________
 Eg: Switch case
-
 
 import java.util.*;
 class Main
@@ -125,3 +151,181 @@ class Main
         
     }
 }
+// The switch statement in Java (and many other programming languages) is a multi-way branching control statement.
+=> It provides a more structured and often more readable way to execute different blocks of code based on the value of a single expression.
+=> In the above we have used next() and charAt() to fetch the operator, Because we don't have a scanner to fetch a char individually.
+________________________________________________________________________________________________________________________________________________________________________________________________________
+
+**Itiration statement(Looping statement):
+
+//Iteration statements, or looping statements, are control flow structures in programming that allow you to repeatedly execute a block of code as long as a certain condition remains true.
+=>They provide a way to automate repetitive tasks without having to write the same code multiple times.
+
+Syntax: for (initialization; condition; increment/decrement) 
+        {
+          // Code to be executed repeatedly
+        }
+
+//Initialization: This statement is executed once at the beginning of the loop. It's often used to declare and initialize a loop counter variable.
+=>Condition: This is a boolean expression that is evaluated before each iteration of the loop. If the condition is true, the code inside the loop's curly braces {} is executed. If the condition is false, the loop terminates.   
+=>Increment/decrement: This statement is executed after each iteration of the loop. It's typically used to update the loop counter variable.
+
+Eg: public class LoopingStatements {
+    public static void main(String[] args) {
+
+// 1. for loop: Print numbers from 1 to 5
+        System.out.println("Using for loop:");
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Number: " + i);
+        }
+        System.out.println();
+
+// 2. while loop: Count down from 5 to 1
+        System.out.println("Using while loop:");
+        int count = 5;
+        while (count >= 1) {
+            System.out.println("Count: " + count);
+            count--;
+        }
+        System.out.println();
+
+// 3. do-while loop: Ask the user if they want to continue (simplified example)
+        System.out.println("Using do-while loop:");
+        int choice = 1; // Assume initially the user wants to continue
+        do {
+            System.out.println("Action performed.");
+            choice--; // Simulate a condition that will eventually stop the loop
+        } while (choice > 0);
+        System.out.println();
+
+// Example of for-each loop (enhanced for loop) for iterating over collections/arrays
+        System.out.println("Using for-each loop (enhanced for loop):");
+        String[] colors = {"Red", "Green", "Blue"};
+        for (String color : colors) {
+            System.out.println("Color: " + color);
+        }
+    }
+}
+________________________________________________________________________________________________________________________________________________________________________________________________________
+** Means using an iterative approach, typically employing a loop (like a for or while loop) to calculate the sequence step by step. 
+=> Instead of a function calling itself repeatedly (which is what recursion does).
+=> An iterative method uses variables to keep track of the previous numbers in the sequence and updates them within the loop to generate the next number
+
+Eg: Fabunacci without recurssion using -forLoop
+
+import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Number: ");
+        int num=sc.nextInt();
+        
+        int first=0;
+        int second=1;
+        
+        System.out.print(first+" "+second+" ");
+        for(int i=2;i<=5;i++)
+        {
+            int temp=first+second;
+            
+            System.out.print(temp+" ");
+            first=second;
+            second=temp;
+        }
+    }
+}
+
+________________________________________________________________________________________________________________________________________________________________________________________________________
+**Factorial of a number using Loop
+
+Eg:
+
+import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Number: ");
+        int num=sc.nextInt();
+        int fact=1;
+        for(int i=1;i<=num;i++)
+        {
+            fact=fact*i;
+        }
+        
+        System.out.println("The factorail is: "+ fact);
+        
+    }
+}
+
+________________________________________________________________________________________________________________________________________________________________________________________________________
+**Reverse the numbers
+
+Eg: 
+
+import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Number: ");
+        int num=sc.nextInt();
+        int rem=0;
+        int reversedNum=0;
+        while(num>0)
+        {
+            
+            rem=num%10;
+            reversedNum=reversedNum*10+rem;
+            num=num/10;
+        }
+        
+        System.out.println(reversedNum);
+        
+    }
+}
+
+________________________________________________________________________________________________________________________________________________________________________________________________________
+**Reversing an array
+
+Eg: 
+
+  import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        int arr[]={5,4,3,2,1};
+        
+        reversedArray(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+    
+    static void reversedArray(int[] arr)
+    {
+        int start=0;
+        int end=arr.length-1;
+        
+        while(start<end)
+        {
+            int temp=arr[start];
+            arr[start]=arr[end];
+            arr[end]=temp;
+            
+            start++;
+            end--;
+        }
+    }
+}
+
+________________________________________________________________________________________________________________________________________________________________________________________________________
+** code to print*****
+                 *
+                     *
+                ******
+Ex: 
+
