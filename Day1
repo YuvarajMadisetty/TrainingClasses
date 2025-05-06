@@ -3,8 +3,9 @@
 //=> Recursion means , A function that calls itself until the condition fails.
 //=> It is a sequence of numbers where each number is to sum with the last two preceding values.
 
+____________________________________________________________________________________________________
 
-//=> Code
+Eg :
 
 class Main {
 public static void main(String[] args) {
@@ -19,6 +20,20 @@ if (n <= 1) {
 return n; 
 } else {
 return fib(n - 1) + fib(n - 2); 
+}
+}
+}
+
+____________________________________________________________________________________________________
+
+Eg: Finding HCF of the number using recursion
+
+class Demo{
+int hcf(int a, int b){
+if(b==0){
+return a;
+}else{
+return hcf(b,a%b);
 }
 }
 }
