@@ -1,0 +1,449 @@
+**Proogram for if else Ladder 
+
+// Here we are using if else  labber.
+
+Eg:
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the day: ");
+        int num=sc.nextInt();
+        if(num<=7)
+        {
+            if(num==1){
+            System.out.println("Monday");
+        }
+        else if(num==2){
+            System.out.println("Tuesday");
+        }
+        else if(num==3){
+            System.out.println("Wednesday");
+        }
+        else if(num==4){
+            System.out.println("Thursday");
+        }
+        else if(num==5){
+            System.out.println("Friday");
+        }
+        else if(num==6){
+            System.out.println("Saturday");
+        }
+        else{
+            System.out.println("Sunday");
+        }
+        }
+        else
+        {
+            System.out.println("Not a Valid Day");
+        }
+    }
+}
+
+___________________________________________________________________________________________________________________________________
+
+**Switch case
+
+// Here we are using Switch case to print days.
+
+Eg:
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Number(1-7): ");
+        int num=sc.nextInt();
+    if(num<=7)
+      {
+          switch(num)
+          {
+              case 1:
+                  System.out.println("Monday");
+                  break;
+              case 2:
+                  System.out.println("Tuesday");
+                  break;
+              case 3:
+                  System.out.println("Wednesday");
+                  break;
+              case 4:
+                  System.out.println("Thursday");
+                  break;
+              case 5:
+                  System.out.println("Friday");
+                  break;
+              case 6:
+                  System.out.println("saturday");
+                  break;
+              default:
+                  System.out.println("Sunday");
+                  
+          }
+         
+      }
+       else
+          {
+              System.out.println("Not a valid Day Number");
+          }
+  }
+  }
+
+____________________________________________________________________________________________________________________________________________
+
+** Adding the given array number using while loop.
+
+Eg:
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Number: ");
+        int num=sc.nextInt();
+        int sum=0;
+        while(num>0)
+        {
+            int rem=num%10;
+            sum=sum+rem;
+            num=num/10;
+        }
+        long ans=0;
+        while(sum>0)
+        {
+            int rem=sum%10;
+            ans=ans+rem;
+            sum=sum/10;
+        }
+        System.out.println("The sum of number: "+ans);
+    }
+}
+
+____________________________________________________________________________________________________________________________________________________________________
+
+**Printing below structure using for loop
+
+*****
+****
+***
+**
+*
+
+Eg:
+// Here we use logic by printing 'j'
+// if i=1 and i<= given number increament i and if j= given number and j>=i then j decreament.
+// Columns of out put are depend on rows.
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Number: ");
+        int num=sc.nextInt();
+        for(int i=1;i<=num;i++){
+            for(int j=num;j>=i;j--){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+____________________________________________________________________________________________________________________________________________________________________
+
+** Printing numbers in pattren using odd number formula i*2-1
+
+1
+123
+12345
+1234567
+123456789
+
+Eg:
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Number: ");
+        int num=sc.nextInt();
+        for(int i=1;i<=num;i++){
+            for(int j=1;j<=(2*i-1);j++){
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+}
+
+____________________________________________________________________________________________________________________________________________________________________
+
+**Using Ternary operator:
+//It isa concise way to represent conditional statement.
+//(condition) ? statement1: statement2;  --Syntax
+
+Eg:
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the value: ");
+        int num=sc.nextInt();
+        if (num==5)
+            {
+            System.out.println("Yes");
+            }else{
+                System.out.println("No");
+            }
+            String res = (num==5) ? "Yes" : "No";
+            System.out.println(res);
+        
+    }
+}
+
+____________________________________________________________________________________________________________________________________________________________________
+
+** Print Halo square ternary operator.
+
+ * * * * *
+ *       *
+ *       *
+ *       *
+ * * * * *
+
+Eg:
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int n=5;
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=n;j++){
+                System.out.print((i==1 || j==5 || j==1 || i==5)?" *":"  ");
+            }
+            System.out.println();
+        }
+        
+            
+    }
+}
+
+_____________________________________________________________________________________________________________________
+
+** for each loop
+// when ever we don't have length and index values , then we need to use 'for each loop'.
+=> Mostly we use for each loop in collections.
+Eg:List, set and map.
+
+Eg:
+
+class Main
+{
+    public static void main(String args[])
+    {
+        int arr[]={1,2,3,4,5};
+        for(int num :arr)
+        {
+            System.out.print(num+" ");
+        }
+    }
+}
+
+______________________________________________________________________________________________________________________
+
+** To print Triangle of '*' using nested loop
+
+    *
+   ***
+  *****
+ *******
+*********
+
+Eg:
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int n=5;
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=5;j>=i;j--){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=(i*2-1);j++)
+            {
+               System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+__________________________________________________________________________________________________________________
+
+** To print Reverse triangle
+*********
+ *******
+  *****
+   ***
+    *
+
+Eg:
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int n=5;
+  for(int i=n-1;i>=1;i--)
+        {
+            for(int j=1;j<=n-i;j++) 
+            {
+                System.out.print(" ");
+            }
+            for (int k=1;k<=2*i-1;k++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+__________________________________________________________________________________________________________________
+
+**To print Diamond of '*' 
+
+  *
+ ***
+*****
+ ***
+  *
+
+Eg:
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int n=3;
+        for (int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=n-i;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int k=1;k<=2*i-1;k++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for(int i=n-1;i>=1;i--)
+        {
+            for(int j=1;j<=n-i;j++) 
+            {
+                System.out.print(" ");
+            }
+            for (int k=1;k<=2*i-1;k++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+____________________________________________________________________________________________________________________________________
+
+** Print a pattern
+
+ *******
+  *****
+   ***
+    *
+   ***
+  *****
+ *******
+
+Eg:
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int n=3;
+         for(int i=n;i>=1;i--)
+        {
+            for(int j=1;j<=n-i;j++) 
+            {
+                System.out.print(" ");
+            }
+            for (int k=1;k<=2*i-1;k++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int i=2;i<=n;i++)
+        {
+            for(int j=1;j<=n-i;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int k=1;k<=2*i-1;k++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+  }
+}
+
+__________________________________________________________________________________________________________
+
+**In the kingdom of Terebinthia, Leslie Burke is so much interested in gardening and hence she plants more trees in her garden.
+She plants trees in a rectangular fashion with the order of rows and columns and numbers the trees in a row-wise order. 
+She planted the mango trees only in the 1st row, 1st column, and last column. So, given the tree number, 
+your task is to find out whether the given tree is a mango tree or not. Now, write a program to check whether the given number denotes a mango tree or not.
+Input Format
+
+=>Input consists of 3 integers. The first input denotes the number of rows. The second input denotes the number of columns. The third input denotes the tree number.
+
+Constraints
+
+NA
+
+Output Format
+
+If the given number is a mango tree, print "Yes". Otherwise, print "No"
+
+Sample Input 0
+
+5
+5
+11
+Sample Output 0
+
+Yes
+Sample Input 1
+
+2
+5
+8
+Sample Output 1
+
+No
+
+Code:
+
