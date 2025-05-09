@@ -2,8 +2,245 @@
 Eg: int a=5;
     int b=6;
     int c=7;
-(int has 4 byte of storage)
+(int has 4 byte of storage addressess)
 //They are same data type, but we are choosing diff variable it has take more or high memory.So,Array are used to simplify the process.
 
 Def : Collection of simillar type of data in a continues allocation of reference variable in stack memory and data of array in Heap memory.
+
+Syntax:
+int[] arr=new int[5], means the array size is 5
+int[] arr={---------};
+int arr[]={---------};
+int []arr={---------};
+int[] arr={1,2,3,4,5};
+//Declaration and initiallization happeining in same line.
+
+//If we want to get the data previously we stored all the data values in separate variables,If you want to get the data we can simply print the variables.
+=>In arr we have to print the data using index values.
+=>ndex values by default start with zero.
+
+
 Eg: 
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr={1,2,3,4,5};
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.println(arr[i]);
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------
+
+//To get the length of string we use length method.
+=> arr.length --It is a function.
+=> str.length --It is a method.
+
+//We can print arrary in Three ways:
+    *for loop
+    *for each loop
+    *Array.ToString() method
+
+
+Eg:
+import java.util.Arrays;
+class Main {
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4,5};
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+//Array.ToString contains for loop and it will print along with [ and ] along with comas " , ";
+-----------------------------------------------------------------------------------------------
+
+** Camel case and snake case ***
+
+=> Snake  case will contain Special Symbols when another word is attaching like(odd_number).
+=> Camel case will contains Upper Letter when another word is Attaching(odd_Number).
+
+=> Java strictly Follows Camel case.
+=> All the in-built methods which was written in java will be in camel case(
+
+Eg:
+//In a given array we have to print how many odd numbers and how many even numbers.
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr={1,2,3,4,5};
+        int[] ans=getCount(arr);
+        System.out.println(Arrays.toString(ans));
+    }
+    static int[] getCount(int[] arr)
+    {
+        int evenCount=0;
+        int oddCount=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]%2==0)
+            {
+                evenCount++;
+            }
+            else
+            {
+                oddCount++;
+            }
+        }
+        return new int[]{evenCount,oddCount};
+    }
+}
+
+-------------------------------------------------------------------------------------------------------
+** To print highest value in array
+
+Eg:
+
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        int arr[]={1,11,3,4,5};
+        int max=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]>max)
+            {
+                max=arr[i];
+            }
+        }
+        System.out.println(max);
+    }
+}
+
+---------------------------------------------------------------------------------------------------------
+** Print Second highest value in array
+
+Eg:
+
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        int arr[]={1,11,3,4,5};
+        int max=0;
+        int secondMax=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]>max)
+            {
+                secondMax=max;
+                max=arr[i];
+            }
+            else if(arr[i]>secondMax)
+            {
+                secondMax=arr[i];
+            }
+        }
+        System.out.println(secondMax);
+    }
+}
+
+------------------------------------------------------------------------------------------------------------
+** Print highest value in minus using single for loop and MIN_VALUE is pre-defined function & it is a constant.
+Eg:
+
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        int arr[]={-1,-11,-3,-4,-5};
+        int max=Integer.MIN_VALUE;
+        int secondMax=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]>max)
+            {
+                secondMax=max;
+                max=arr[i];
+            }
+            else if(arr[i]>secondMax)
+            {
+                secondMax=arr[i];
+            }
+        }
+        System.out.println(max);
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------
+**Print highest value in minus using single for loop.
+
+Eg:
+
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        int arr[]={-1,-11,-3,-4,-5};
+        int max=0;
+        int secondMax=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            arr[i]=arr[i]*-1;
+            if(arr[i]>max)
+            {
+                secondMax=max;
+                max=arr[i];
+            }
+            else if(arr[i]>secondMax)
+            {
+                secondMax=arr[i];
+            }
+        }
+        max=max*-1;
+        secondMax=secondMax*-1;
+        System.out.println(secondMax);
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------
+** Array object creation.
+
+Eg: int arr[]=new arr[];
+
+=> Here we are creating new keyword to create a object.
+=> Array size is fixed in these format.
+=> arr reference is stored in Stack.
+=> object is stored in heap, with the given size.1
+
+=> In this, if the aray is int, then if we do not add any value to it then, the value are: 0's.
+=> if the array is String type,it will return "null" value.
+
+---------------------------------------------------------------------------------------------------------------------------
+** Checking weather an array is sorted or not
+
+Eg:
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int arr[]={1,2,3,44,5};
+        int n=arr.length-1;
+        boolean uv=true;
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]>=arr[i+1])
+            {
+                uv=false ;
+            }
+            
+        }
+        if(uv)
+        {
+            System.out.print("Asc sorted");
+        }
+        else
+        {
+            System.out.print("Not sorted");
+        }
+        
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------
+**
