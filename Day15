@@ -37,7 +37,7 @@ class GfG {
 import java.io.*;
 import java.util.*;
 
-class GFG {
+class Main {
 
   static int numberOfSubstrings(String s, int K)
   {
