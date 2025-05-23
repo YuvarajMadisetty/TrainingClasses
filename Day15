@@ -1,0 +1,93 @@
+***Problem solving***
+\\ Koko eating bananas
+
+import java.util.*;
+class GfG {
+    static int koKoEat(int[] arr, int k) {
+        int max = Arrays.stream(arr).max().getAsInt();
+        for (int speed = 1; speed <= max; speed++) {
+            
+            int time = 0;
+            for (int bananas : arr) {
+                
+                time += bananas / speed;
+
+                if (bananas % speed != 0) {
+                    time++;
+                }
+            }
+            
+            if (time <= k) {
+                return speed;
+            }
+        }
+
+        return max;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {3, 6, 7, 11};
+        int k = 8;
+        System.out.println(koKoEat(arr, k));
+    }
+}
+--------------------------------------------------------------------
+***No.of sub strings***
+
+import java.io.*;
+import java.util.*;
+
+class GFG {
+
+  static int numberOfSubstrings(String s, int K)
+  {
+    HashMap<Character, Integer> unmap = new HashMap<>();
+
+    int start = 0, end = 0, n = s.length(), result = 0;
+
+
+    while (end < n) {
+      unmap.put(s.charAt(end),
+                unmap.getOrDefault(s.charAt(end), 0)
+                + 1);
+
+      if (unmap.size() == K) {
+
+        
+        while (unmap.size() == K) {
+
+          
+          result += n - end;
+
+          unmap.put(s.charAt(start),
+                    unmap.get(s.charAt(start))
+                    - 1);
+
+          
+          if (unmap.get(s.charAt(start)) == 0) {
+            unmap.remove(s.charAt(start));
+          }
+
+          start++;
+        }
+
+        end++;
+      }
+
+
+      else {
+        end++;
+      }
+    }
+
+    return result;
+  }
+
+  public static void main(String[] args)
+  {
+    String S = "abcabc";
+    int K = 3;
+
+    System.out.print(numberOfSubstrings(S, K));
+  }
+}
