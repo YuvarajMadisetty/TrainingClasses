@@ -1,0 +1,62 @@
+***Stacks:
+
+-> Stack is a special data structure , which follows last in first out.
+-> Which comes under linear data structures
+
+Eg: * Push -To add ele ,which will be last ele.
+    * Pop -To remove ele will enterd in last.
+    * Peek -To check top ele.
+    * isEmpty -To check stack is empty or not.
+    * display -To display a stack.
+    * Contains -To check stack contain required ele.
+
+-> Stacks are used to get the out put in constant time,Which is Time Complexity:(O)1.
+-> To return top ele use peek ,and use 
+   Eg: return top+1;  //To get the size of stack.
+
+Example Code: 
+// To use all operation of stack.
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Stack<Integer> stack=new Stack<>();
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        stack.push(40);
+        stack.push(50);
+
+        //Removing a ele from stack.
+        stack.pop();
+        
+        //Printing whole stack elements
+        System.out.println(stack);
+        
+        //Peek Element
+        System.out.println(stack.peek());
+        
+        // for contains()
+        if(stack.contains(30))
+        {
+            System.out.println("Element is there");
+        }
+        else
+        {
+            System.out.println("Element is not there");
+        }
+        
+        // For isEMpty()
+        
+         if(stack.isEmpty())
+        {
+            System.out.println("stack is Empty ");
+        }
+        else
+        {
+            System.out.println("Stack is not Empty");
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------------------
