@@ -1,0 +1,77 @@
+*** Monotonic Stack
+
+-> A Monotonic Stack is a special type of stack data structure that maintains its elements in either increasing or decreasing order. 
+-> It’s especially useful for solving problems involving next greater/smaller elements, ranges, spans, and sliding windows efficiently, often in linear time (O(n)).
+
+=> Key Types:
+1> Monotonically Increasing Stack
+   - Stack top holds the smallest element.
+   - Used for finding next greater or previous greater elements.
+
+2> Monotonically Decreasing Stack
+   - Stack top holds the largest element.
+   - Used for finding next smaller or previous smaller elements.
+
+
+=> Example Code: 
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int arr[] = {5, 7, 4, 6, 3, 0};
+        List<Integer> list = find(arr);
+        System.out.print(list);
+    }
+
+    static List<Integer> find(int arr[]) {
+        Stack<Integer> stack = new Stack<>();
+        
+        int n = arr.length;
+        int res[] = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            while (!stack.isEmpty() && stack.peek() < arr[i]) {
+                stack.pop();
+            }
+            res[i] = stack.isEmpty() ? -1 : stack.peek();
+            stack.push(arr[i]);
+        }
+
+        List<Integer> list = new ArrayList<>();
+        for (int val : res) {
+            list.add(val);
+        }
+        return list;
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+*** Character frequency count 
+->To count the frequency of each character in a string in Java, you can use a HashMap to store the characters as keys and their frequencies as values.
+->You can make it case-insensitive using input.toLowerCase().
+->You can include or exclude whitespace/punctuation as needed.
+
+=>Example code:
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class CharacterFrequency {
+    public static void main(String[] args) {
+        String input = "hello world";
+        Map<Character, Integer> frequencyMap = new HashMap<>();
+
+        for (char c : input.toCharArray()) {
+            // Optional: skip spaces
+            if (c == ' ') continue;
+
+            frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1);
+        }
+
+        // Print the character frequencies
+        for (Map.Entry<Character, Integer> entry : frequencyMap.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+    }
+}
