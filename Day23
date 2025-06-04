@@ -1,0 +1,98 @@
+*** Trees:
+-> A tree is a hierarchical data structure used to represent relationships between elements. Trees are widely used for tasks like searching, sorting, hierarchical representation, and more.
+-> A tree is a non-linear data structure made up of nodes.
+-> We use trees to get Output in log n time complexity.
+where:
+      - The top node is called the root.
+      - Each node contains some data and links to child nodes.
+      - There are no cycles (it's a connected acyclic graph).
+      - Every node (except the root) has exactly one parent.
+
+Node	 -An element of the tree containing data
+Root	 -The topmost node in the tree
+Child	 -A node that descends from another node
+Parent -A node that has one or more child nodes
+Leaf	 -A node with no children
+Edge	 -The link between a parent and a child
+Height -Max number of edges from root to a leaf
+Depth	 -Number of edges from the root to that node
+Subtree-A tree formed by any node and its descendants
+
+-> Highest of tree : Longest path of tree.
+-> Depth of tree : max(Left+Right+1)
+
+=> Types of Trees
+1. General Tree
+-Each node can have any number of children.
+-Used in file systems, organizational structures, etc.
+
+2. Binary Tree
+-Each node has at most two children (left and right).
+-Base for many tree types like BST, AVL, etc.
+-Perfect Binary tree means every level should be filled with nodes having either two.(To maintain balance)
+-Full Binary tree means every level should be filled with nodes having either two or zreo.(To maintain balance)
+-Complete Binary tree means every level should be filled with nodes and start with left to right.
+
+3. Binary Search Tree (BST)
+-A binary tree with ordering:
+-Left subtree < Root < Right subtree.
+-Used in fast search, insert, and delete operations.
+
+4. AVL Tree (Self-balancing BST)
+-A balanced BST.
+-Balance factor (height difference of left and right subtree) is kept between -1, 0, and 1.
+
+5. Red-Black Tree
+-A self-balancing BST using color properties (red and black).
+-Ensures O(log n) time for operations.
+
+6. Heap Tree
+-A complete binary tree:
+-Max Heap: Parent ≥ children
+-Min Heap: Parent ≤ children
+-Used in priority queues, sorting (heap sort).
+
+7. Segment Tree
+-Used for range queries (sum, min, max) on an array.
+-Tree is built from the array for O(log n) query and update.
+
+8. Trie (Prefix Tree)
+-Used for storing strings efficiently.
+-Every node represents a character; paths form words.
+-Used in dictionaries, autocomplete, IP routing.
+
+9. N-ary Tree
+-Each node can have at most N children.
+-Useful in game trees, decision trees, etc.
+
+10. B Tree / B+ Tree
+-Generalized BST used in database indexing.
+-Balanced tree designed for disk-based systems.
+
+=> Tree Traversals
+- How to visit all nodes:
+    -In-order (Left, Root, Right) – BST gives sorted order.
+    -Pre-order (Root, Left, Right) – Used for expression trees.
+    -Post-order (Left, Right, Root) – Used for deleting trees.
+    -Level-order – Breadth-first traversal using a queue.
+
+
+=> Balancing and Unbalancing trees:
+
+-> Balanced Tree :
+  -  A balanced tree is a tree where the height difference (or depth difference) between left and right subtrees of every node is within a specific limit (usually -1, 0, or 1).
+  -  Ensures operations (search, insert, delete) stay efficient — typically O(log n) time.
+     Examples: AVL Tree, Red-Black Tree
+  -  Formula (AVL Balance Factor):
+  -  Balance Factor :
+      - Height of Left Subtree
+      - Height of Right Subtree
+  -  Balance Factor=Height of Left Subtree−Height of Right Subtree
+  -  For AVL Tree: Balance Factor ∈ { -1, 0, +1 }
+
+-> Unbalanced Tree :
+  -  An unbalanced tree is a tree where the height difference between subtrees of some nodes exceeds the allowed balance factor (usually more than 1 or less than -1).
+  -  Can degrade performance to O(n) in the worst case (like a linked list).
+     Example: Inserting sorted data into a simple Binary Search Tree (BST) without self-balancing.
+
+-> Tree Height : Height of a node = Number of edges in the longest path from the node to a leaf.
